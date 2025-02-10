@@ -69,6 +69,10 @@ pub fn CircularArray(comptime T: type) type {
             return self._buf[self._head];
         }
 
+        pub fn isEmpty(self: *Self) bool {
+            return self.size() == 0;
+        }
+
         pub fn peekLast(self: *Self) ?T {
             if (self.size() == 0) {
                 return null;
